@@ -8,12 +8,14 @@
         (function() {
             var params = new URLSearchParams(window.location.search);
             var token = params.get('t');
+
             if (!token && window.location.hash) {
                 token = window.location.hash.substring(1);
             }
+
             if (token) {
                 token = token.replace(/^\/+|\/+$/g, '');
-                // Redirects instantly with no delay screen:
+                // Instant client-side redirect without delays or interstitial screens
                 window.location.replace("https://eximtag.in/?rqr_token=" + encodeURIComponent(token));
             } else {
                 window.location.replace("https://eximtag.in/");
@@ -21,7 +23,7 @@
         })();
     </script>
 </head>
-<body style="background:#0f172a; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; margin:0;">
-    <p>Opening card destination...</p>
+<body style="background:#0f172a; color:#f8fafc; font-family:sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;">
+    <p>Opening review...</p>
 </body>
 </html>
